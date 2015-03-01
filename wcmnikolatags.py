@@ -25,6 +25,49 @@
 # Categorie can be the name of the repo.
 # Need a repo for Nikola scripts
 
+# In[13]:
+
+import os
+from walkdir import filtered_walk, dir_paths, all_paths, file_paths
+
+
+# In[14]:
+
+nbog = raw_input('Name of notebook to tag: ')
+
+
+# In[15]:
+
+files = file_paths(filtered_walk('/home/wcmckee/github/', depth=100, included_files=[nbog + '.py']))
+
+
+# In[16]:
+
+print files
+
+
+# In[17]:
+
+for fil in files:
+    #print fil
+    opfil = open(fil, 'r')
+    print opfil.read()
+    opfil.close()
+
+
+# In[19]:
+
+opfilz = open(fil, 'r')
+
+opfilz.read()
+
+
+# In[1]:
+
+#python module that can be used to scan .py files and return
+#the imports as a list.
+
+
 # In[ ]:
 
 
